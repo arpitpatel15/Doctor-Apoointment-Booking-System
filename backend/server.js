@@ -23,9 +23,10 @@ app.use('/api/doctor',doctorRoute) //localhost:3000/api/doctor
 app.use('/api/user',userRoute) //localhost:3000/api/user
 
 
-
 app.get('/',(req,res)=>{
     res.send('API working!!!???')
 })
 
-export const handler = serverless(app)
+app.listen(PORT,()=>{
+    console.log(`Server is running on port ${PORT}`)
+})
