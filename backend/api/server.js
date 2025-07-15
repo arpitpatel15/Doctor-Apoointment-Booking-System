@@ -1,13 +1,13 @@
 import express, { urlencoded } from 'express'
 import cors from 'cors'
 import 'dotenv/config'
-import {connectDB} from './config/mongodb.js'
-import connectCloudinary from './config/cloudinary.js'
-import adminRouter from './routes/adminRoute.js'
-import doctorRoute from './routes/doctorRoute.js'
-import userRoute from './routes/userRoute.js'
+import {connectDB} from '../config/mongodb.js'
+import connectCloudinary from '../config/cloudinary.js'
+import adminRouter from '../routes/adminRoute.js'
+import doctorRoute from '../routes/doctorRoute.js'
+import userRoute from '../routes/userRoute.js'
 
-
+import serverless from 'serverless-http'
 const app = express()
 const PORT = 3000
 connectDB()
@@ -28,6 +28,4 @@ app.get('/',(req,res)=>{
     res.send('API working!!!???')
 })
 
-app.listen(PORT,()=>{
-    console.log("Server started at PORT : ",PORT);
-})
+export const handler = serverless(app)
