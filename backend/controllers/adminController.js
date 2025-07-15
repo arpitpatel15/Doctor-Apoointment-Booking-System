@@ -129,7 +129,7 @@ const cancelAppointmentByAdmin = async (req, res) => {
     });
 
     const mailOptions = {
-      from: process.env.Email_User,
+      from: `"MediBook Appointment" <${process.env.Email_User}>`,
       to: userData.email,
       subject: `Appointment Cancelled by Admin due to some reasons with - ${doctorData.name}`,
       html: `

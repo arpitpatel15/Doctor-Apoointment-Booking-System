@@ -153,7 +153,7 @@ const bookAppointment = async(req,res) =>{
                 },
             });
         const mailOptions = {
-            from: process.env.Email_User,
+            from: `"MediBook Appointment" <${process.env.Email_User}>`,
             to: userData.email,
             subject: "Appointment Confirmation - MediBook",
             html: `
@@ -243,7 +243,7 @@ const cancleAppointment = async(req,res) =>{
         });
 
         const mailOptions = {
-          from: process.env.Email_User,
+          from: `"MediBook Appointment" <${process.env.Email_User}>`,
           to: userData.email,
           subject: `Appointment Cancellation - ${doctorData.name}`,
           html: `

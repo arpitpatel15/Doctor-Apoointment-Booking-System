@@ -10,9 +10,14 @@ const AppContextProvider = ({ children }) => {
         const dateArray = slotDate.split('_')
         return `${dateArray[0]} ${months[Number(dateArray[1])]} ${dateArray[2]}`
     }
-
+    const calculateAge = (dob) => {
+        const date = new Date();
+        const birthDate = new Date(dob);
+        let age = date.getFullYear() - birthDate.getFullYear();
+        return age;
+    }
     const value = {
-        slotDateFormat
+        slotDateFormat,calculateAge
     }
     return (
         <AppContext.Provider value={value}>
