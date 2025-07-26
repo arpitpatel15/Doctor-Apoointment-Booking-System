@@ -37,7 +37,7 @@ import Gynecologist from './Gynecologist.svg'
 import Neurologist from './Neurologist.svg'
 import Pediatricians from './Pediatricians.svg'
 import medibbook_logo from './medibooklogo.png'
-import Medibook from './Medibook 1.svg'
+import Medibook from './Medibook1.svg'
 import logos from './1.png'
 export const assets = {
     appointment_img,
